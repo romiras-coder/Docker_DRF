@@ -1,7 +1,7 @@
 #! /bin/bash
 
 # wait for Postgres to start
-#sleep 10
+sleep 10
 
 python manage.py makemigrations --no-input
 
