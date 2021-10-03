@@ -26,7 +26,6 @@ services:
     ports:
       - "8000:8000"
 
-
   nginx:
     build:
       context: ./docker/nginx
@@ -41,7 +40,11 @@ services:
       - ./media/:/media
 
   redis:
-    image: 'redis:4-alpine'
+    image: 'redis'
+    depends_on:
+      - db_pg
+      - web
+      - nginx
     ports:
       - '6379:6379'
 #volumes:
